@@ -1,0 +1,22 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model CreateHeroesAndVillains {
+  id    String      @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  level Int
+  type  String
+  element String
+  boss Boolean
+  created_at    DateTime?     @default(now())
+  updated_at    DateTime?     @default(now())
+}
+
+
