@@ -4,7 +4,8 @@
   "description": "Api Hiper estruturada",
   "main": "index.js",
   "scripts": {
-    "run mac": "npx nodemon src/server.ts --watch 'src/' -e ts"
+    "run mac": "npx nodemon src/server.ts --watch 'src/' -e ts",
+    "postinstall": "prisma generate"
   },
   "author": "Victor Dev/QA",
   "license": "ISC",
