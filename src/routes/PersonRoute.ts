@@ -9,7 +9,8 @@ import { PrismaClient } from "@prisma/client";
 export async function PersonRoute(fastify: FastifyInstance, options: FastifyPluginOptions) {
 
   const prisma = new PrismaClient();
-
+  fastify.get("/", async (request: FastifyRequest, reply: FastifyReply) => {
+  })
   fastify.post("/createPerson", async (request: FastifyRequest, reply: FastifyReply) => {
     return new CreateHeroesAndVillainsController(prisma).handle(request, reply);
   });
