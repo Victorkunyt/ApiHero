@@ -1,4 +1,4 @@
-import { FastifyRequest, FastifyReply, FastifyLoggerOptions } from "fastify";
+import { FastifyRequest, FastifyReply } from "fastify";
 import { Names } from "../types/HeroesAndVillainsTypes";
 import { CreateHeroesAndVillainsService } from "../services/CreatePersonService";
 import { createHeroesAndVillainsSchema } from "../types/HeroesAndVillainsTypes";

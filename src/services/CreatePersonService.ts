@@ -11,8 +11,6 @@ class CreateHeroesAndVillainsService {
     const verificationName = await this.prisma.createHeroesAndVillains.findMany({
       where: {
         name: userData.name,
-        type: userData.type,
-        element: userData.element
       },
     });
 

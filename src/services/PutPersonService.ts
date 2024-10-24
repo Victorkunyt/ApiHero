@@ -20,7 +20,7 @@ class UpdateHeroesAndVillainsService {
         throw new UserExistsError("Id Doesn't exist in DataBase");
       }
       
-    const verificationName = await this.prisma.createHeroesAndVillains.findMany(
+    const verificationName = await this.prisma.createHeroesAndVillains.findFirst(
       {
         where: {
           name: userData.name,
@@ -28,8 +28,9 @@ class UpdateHeroesAndVillainsService {
       }
     );
 
-    if (verificationName.length > 0) {
-      throw new UserExistsError("User with this name exists in database");
+    if (verificationName && verificationName.id !== userData.id) {
+      // Se o nome já existe e pertence a outro usuário, lançar exceção
+      throw new UserExistsError('User with this name exists in database');
     }
 
     const UpdateHero = await this.prisma.createHeroesAndVillains.update({

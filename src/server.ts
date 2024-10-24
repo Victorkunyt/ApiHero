@@ -1,6 +1,10 @@
 import fastify from 'fastify';
 import cors from '@fastify/cors';
 import { PersonRoute } from './routes/PersonRoute';
+import * as dotenv from 'dotenv';
+
+// Carregar o arquivo .env
+dotenv.config();
 
 
 const app = fastify({ logger: true });
