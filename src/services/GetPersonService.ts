@@ -9,8 +9,8 @@ class GetHeroesAndVillainsService {
     const GetAll = await this.prisma.createHeroesAndVillains.findMany({});
 
     if (GetAll.length === 0) {
-         throw new MessageInformation('Nenhum Personagem cadastrado')
-    }
+         throw new MessageInformation('No characters registered')
+    }                                  
     return GetAll;
   }
 }
